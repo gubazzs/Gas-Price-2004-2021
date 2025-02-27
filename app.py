@@ -267,10 +267,10 @@ with st.sidebar:
     with st.container():
         st.plotly_chart(criar_grafico(df_filtrado), use_container_width=True)
 
-    @st.cache_data
-    @st.dialog("Como Funciono?")
-    def quest():
-        st.title("Ola!")
-            
-    if st.button("?", key="floating_button"):
-        quest()
+    #@st.cache_data
+    #@st.dialog("Como Funciono?")
+    #def quest():
+    #    st.title("Ola!")
+    #        
+    #if st.button("?", key="floating_button"):
+    #    quest()
