@@ -1,0 +1,135 @@
+MainMenu{visibility: hidden;}
+footer {visibility: hidden;}
+
+.st-emotion-cache-h4xjwg {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 0px;
+    background: rgb(0, 85, 255);
+    outline: none;
+    z-index: 999990;
+    display: block;
+  }
+@media (min-width: calc(736px + 8rem)) {
+    .st-emotion-cache-t1wise {
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+}
+.st-emotion-cache-t1wise {
+    width: 100%;
+    padding: 0rem;
+    max-width: initial;
+    min-width: auto;
+}
+.st-emotion-cache-kgpedg {
+    display: none;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    -moz-box-align: start;
+    align-items: start;
+    padding: 0rem;
+}.st-emotion-cache-a6qe2i {
+    padding: 0px 1.5rem;
+}
+.st-emotion-cache-1wqrzgl {
+    position: relative;
+    top: 0.125rem;
+    background-color: rgb(38, 39, 48);
+    z-index: 999991;
+    min-width: 244px;
+    max-width: 700px;
+    transform: none;
+    transition: transform 300ms, min-width 300ms, max-width 300ms;
+}
+.st-emotion-cache-1espb9k h1 {
+    font-size: 72px;
+    font-weight: 600;
+    padding: 1.25rem 0px 1rem;
+}
+.st-emotion-cache-1espb9k {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 26px ;
+    margin-bottom: -1rem;
+    color: inherit;
+}
+.st-emotion-cache-bm2z3a {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: auto;
+    -moz-box-align: center;
+    align-items: center;
+    height: 100%;
+}
+@media screen {
+    .maplibregl-ctrl-attrib.maplibregl-compact {
+        visibility: hidden;
+        background-color: #fff;
+        border-radius: 12px;
+        box-sizing: content-box;
+        color: #000;
+        margin: 10px;
+        min-height: 20px;
+        padding: 2px 24px 2px 0;
+        position: relative;
+    }
+}
+.st-emotion-cache-tauc48 {
+    width: 1220px;
+    position: relative;
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    gap: 0px;
+}
+.st-emotion-cache-15wzwg4 {
+    visibility: hidden;
+    display: inline-flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    font-weight: 400;
+    border-radius: 0.5rem;
+    margin: 0px 0.125rem;
+    text-transform: none;
+    font-family: inherit;
+    color: inherit;
+    width: auto;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    border: medium;
+    padding: 0.5rem;
+    font-size: 14px;
+    line-height: 1;
+    min-width: 2rem;
+    min-height: 2rem;
+}
+.st-emotion-cache-19el2lr {
+    visibility: hidden;
+    display: inline-flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    font-weight: 400;
+    border-radius: 0.5rem;
+    margin: 80vh 0.125rem;
+    text-transform: none;
+    font-family: inherit;
+    color: inherit;
+    width: auto;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    border: medium;
+    font-size: 14px;
+    line-height: 1;
+    min-width: 2rem;
+    min-height: 2rem;
+    padding: 0px;
+}
