@@ -31,13 +31,13 @@ st.set_page_config(
     layout="wide"
 )
 #CSS Style
-with open('app/style.css') as f:
+with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # Carregar dados
 @st.cache_data
 def carregar_dados():
-    return pd.read_parquet("/home/gubazzs/Documents/DashGasolina/app/GasOtimized_P.parquet")
+    return pd.read_parquet("GasOtimized_P.parquet")
 
 df = carregar_dados()
 
@@ -45,7 +45,7 @@ df = carregar_dados()
 # Carregar GeoJSON
 @st.cache_data
 def carregar_geojson():
-    with open("app/brazil_geo.json", "r") as f:
+    with open("brazil_geo.json", "r") as f:
         return json.load(f)
 
 brazil_states = carregar_geojson()
