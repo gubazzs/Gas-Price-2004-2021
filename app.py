@@ -7,9 +7,9 @@ import json
 import os
 
 #Otimização da Planilha caso necessario
-if not os.path.exists("app/GasOtimized.parquet"):
-    df0409 = pd.read_csv("app/gasolina_2000+.csv", index_col=0)
-    df1021 = pd.read_csv("app/gasolina_2010+.csv", index_col=0)
+if not os.path.exists("GasOtimized.parquet"):
+    df0409 = pd.read_csv("gasolina_2000+.csv", index_col=0)
+    df1021 = pd.read_csv("gasolina_2010+.csv", index_col=0)
 
     df0421 = pd.concat([df0409, df1021])
     df0421['DATA INICIAL'] = pd.to_datetime(df0421['DATA INICIAL'])
@@ -18,9 +18,9 @@ if not os.path.exists("app/GasOtimized.parquet"):
     dfclean = df0421[['DATA INICIAL', 'DATA FINAL', 'REGIÃO', 'ESTADO', 'PRODUTO', 'PREÇO MÉDIO REVENDA']]
     dfclean.to_csv("app/GasOtimized.csv")
 
-    df0421_csv = pd.read_csv("app/GasOtimized.csv", index_col=0)
+    df0421_csv = pd.read_csv("GasOtimized.csv", index_col=0)
 
-    df0421_csv.to_parquet("app/GasOtimized_P.parquet", index=False)
+    df0421_csv.to_parquet("GasOtimized_P.parquet", index=False)
 
 
 # Configuração da Página
@@ -31,7 +31,7 @@ st.set_page_config(
     layout="wide"
 )
 #CSS Style
-with open('app/style.css') as f:
+with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # Carregar dados
