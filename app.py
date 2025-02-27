@@ -6,22 +6,22 @@ import numpy as np
 import json
 import os
 
-#Otimização da Planilha caso necessario
-if not os.path.exists("GasOtimized.parquet"):
-    df0409 = pd.read_csv("gasolina_2000+.csv", index_col=0)
-    df1021 = pd.read_csv("gasolina_2010+.csv", index_col=0)
-
-    df0421 = pd.concat([df0409, df1021])
-    df0421['DATA INICIAL'] = pd.to_datetime(df0421['DATA INICIAL'])
-    df0421['DATA FINAL'] = pd.to_datetime(df0421['DATA FINAL'])
-
-    dfclean = df0421[['DATA INICIAL', 'DATA FINAL', 'REGIÃO', 'ESTADO', 'PRODUTO', 'PREÇO MÉDIO REVENDA']]
-    dfclean.to_csv("app/GasOtimized.csv")
-
-    df0421_csv = pd.read_csv("GasOtimized.csv", index_col=0)
-
-    df0421_csv.to_parquet("GasOtimized_P.parquet", index=False)
-
+##Otimização da Planilha caso necessario
+#if not os.path.exists("app/GasOtimized.parquet"):
+#    df0409 = pd.read_csv("/home/gubazzs/Documents/DashGasolina/gasolina_2000+.csv", index_col=0)
+#    df1021 = pd.read_csv("/home/gubazzs/Documents/DashGasolina/gasolina_2010+.csv", index_col=0)
+#
+#    df0421 = pd.concat([df0409, df1021])
+#    df0421['DATA INICIAL'] = pd.to_datetime(df0421['DATA INICIAL'])
+#    df0421['DATA FINAL'] = pd.to_datetime(df0421['DATA FINAL'])
+#
+#    dfclean = df0421[['DATA INICIAL', 'DATA FINAL', 'REGIÃO', 'ESTADO', 'PRODUTO', 'PREÇO MÉDIO REVENDA']]
+#    dfclean.to_csv("app/GasOtimized.csv")
+#
+#    df0421_csv = pd.read_csv("/home/gubazzs/Documents/DashGasolina/gasolina_2000+.csvGasOtimized.csv", index_col=0)
+#
+#    df0421_csv.to_parquet("app/GasOtimized_P.parquet", index=False)
+#
 
 # Configuração da Página
 st.set_page_config(
@@ -31,13 +31,13 @@ st.set_page_config(
     layout="wide"
 )
 #CSS Style
-with open('style.css') as f:
+with open('app/style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # Carregar dados
 @st.cache_data
 def carregar_dados():
-    return pd.read_csv("app/GasOtimized.csv", index_col=0)
+    return pd.read_parquet("/home/gubazzs/Documents/DashGasolina/app/GasOtimized_P.parquet")
 
 df = carregar_dados()
 
@@ -180,7 +180,7 @@ with st.sidebar:
     with DataInicial:
         st.date_input(
             "DATA INICIAL",
-            value=CvDate(st.session_state["selected_data_inicial"]),
+            #value=CvDate(st.session_state["selected_data_inicial"]),
             min_value=CvDate(df["DATA INICIAL"].min()),
             max_value=CvDate(df["DATA INICIAL"].max()),
             key="selected_data_inicial"
@@ -189,7 +189,7 @@ with st.sidebar:
     with DataFinal:
         st.date_input(
             "DATA FINAL",
-            value=CvDate(st.session_state["selected_data_final"]),
+            #value=CvDate(st.session_state["selected_data_final"]),
             min_value=CvDate(df["DATA INICIAL"].min()),
             max_value=CvDate(df["DATA FINAL"].max()),
             key="selected_data_final"
